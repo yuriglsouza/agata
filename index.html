@@ -1,0 +1,1274 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>O Jornal do Amor — Edição Especial</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Uma edição especial impressa digitalmente para celebrar a história de amor mais extraordinária já contada.">
+  <meta name="author" content="O Jornal do Amor">
+  <meta property="og:title" content="O Jornal do Amor — Edição Especial">
+  <meta property="og:description" content="Uma edição de colecionador registrando momentos inestimáveis de amor e cumplicidade.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bgWarm: '#fdfbf7',
+            txtCharcoal: '#1a1a1a',
+            accentRed: '#900000',
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['Inter', 'sans-serif'],
+            handwritten: ['Caveat', 'cursive'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Estilos personalizados para emular jornal impresso clássico */
+    body {
+      background-color: #fdfbf7;
+      color: #1a1a1a;
+      font-family: 'Inter', sans-serif;
+      position: relative;
+    }
+
+    /* Borda pontilhada clássica de jornal */
+    .newspaper-border {
+      border-color: #1a1a1a;
+    }
+
+    /* Linhas finas clássicas de separação */
+    .sep-line {
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1rem 0;
+      opacity: 0.85;
+    }
+
+    /* Linhas duplas de jornal clássico */
+    .double-border {
+      border-top: 4px double #1a1a1a;
+      border-bottom: 4px double #1a1a1a;
+    }
+
+    /* Letra capitular (Drop Cap) estilizada */
+    .drop-cap::first-letter {
+      float: left;
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      line-height: 0.85;
+      padding-top: 4px;
+      padding-right: 8px;
+      font-weight: 900;
+      color: #900000;
+    }
+
+    /* Estilo de rolagem personalizado */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #fdfbf7;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #900000;
+      border-radius: 4px;
+    }
+
+    /* Efeitos de entrada por scroll */
+    .reveal-item {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal-item.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body class="selection:bg-accentRed selection:text-white overflow-x-hidden min-h-screen">
+
+  <!-- Tela de Abertura (Intro Overlay) -->
+  <div id="intro-overlay" class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-bgWarm transition-all duration-1000 ease-in-out">
+    <div class="absolute inset-0 pointer-events-none opacity-[0.04] bg-repeat" style="background-image: url(&quot;data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E&quot;);"></div>
+    
+    <div class="max-w-md w-[90%] text-center border-4 border-double border-txtCharcoal p-8 bg-bgWarm shadow-2xl relative">
+      <div class="absolute -top-6 left-1/2 -translate-x-1/2 bg-accentRed text-white text-xs font-black uppercase px-4 py-1 tracking-widest rounded-sm shadow border border-txtCharcoal">
+        EXTRA! EXTRA!
+      </div>
+      
+      <h3 class="font-serif text-3xl md:text-4xl font-black uppercase tracking-tight text-txtCharcoal mt-4 mb-2 leading-none">
+        Alerta de Notícia Quente!
+      </h3>
+      <p class="text-xs font-bold text-accentRed tracking-widest uppercase mb-6">Edição Histórica Urgente</p>
+      
+      <div class="w-24 h-24 border-2 border-dashed border-accentRed rounded-full flex items-center justify-center mx-auto mb-8 animate-pulse">
+        <svg class="w-12 h-12 text-accentRed fill-accentRed" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        </svg>
+      </div>
+      
+      <p class="font-serif italic text-sm text-txtCharcoal/80 mb-8 leading-relaxed">
+        "Acaba de sair da prensa uma edição extraordinária sobre o acontecimento mais marcante de Blumenau."
+      </p>
+      
+      <button id="btn-enter" class="w-full bg-accentRed hover:bg-[#700000] text-white font-bold uppercase py-3 tracking-widest transition-all duration-300 transform active:scale-95 shadow border border-txtCharcoal">
+        Abrir Edição Especial
+      </button>
+    </div>
+  </div>
+
+  <!-- Textura de papel envelhecido global (Overlay invisível para interação mas visível visualmente) -->
+  <div class="fixed inset-0 pointer-events-none z-50 opacity-[0.04] bg-repeat" style="background-image: url(&quot;data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E&quot;);"></div>
+
+  <!-- Barra de Navegação Superior (Top Bar) -->
+  <nav class="border-b border-[#1a1a1a]/10 py-3 px-4 md:px-8 bg-bgWarm/90 backdrop-blur-sm sticky top-0 z-40 flex justify-between items-center">
+    <div class="flex items-center space-x-2">
+      <!-- Ícone de Coração -->
+      <svg class="w-5 h-5 text-accentRed fill-accentRed animate-pulse" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+      </svg>
+      <span class="font-serif text-xs md:text-sm font-bold uppercase tracking-widest text-txtCharcoal">O Jornal do Amor</span>
+    </div>
+    
+    <!-- Botões de Ação -->
+    <div class="flex items-center space-x-4">
+      <!-- Botão Playlist -->
+      <a href="#trilha-sonora" class="hover:text-accentRed transition-colors duration-200" title="Ir para Trilha Sonora">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
+        </svg>
+      </a>
+      <!-- Botão Galeria -->
+      <a href="#arquivos-exclusivos" class="hover:text-accentRed transition-colors duration-200" title="Ir para Galeria">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+        </svg>
+      </a>
+      <!-- Botão Compartilhar -->
+      <button id="btn-share" class="flex items-center space-x-1 border border-txtCharcoal px-2.5 py-1 text-xs font-bold uppercase tracking-wider hover:bg-accentRed hover:text-white hover:border-accentRed transition-all duration-300">
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 10.742l4.636-2.318m0 7.116l-4.636-2.318M21 12a3 3 0 11-6 0 3 3 0 016 0zm-11-6a3 3 0 11-6 0 3 3 0 016 0zm0 12a3 3 0 11-6 0 3 3 0 016 0z" />
+        </svg>
+        <span>Compartilhar</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Conteúdo Principal -->
+  <main class="px-4 md:px-8 max-w-6xl mx-auto pt-6 pb-20">
+
+    <!-- 1. CABEÇALHO (Masthead) -->
+    <header class="text-center my-6 md:my-10">
+      <!-- Nome do Jornal -->
+      <h1 class="font-serif text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black uppercase tracking-tighter leading-none hover:scale-[1.01] transition-transform duration-300 select-none">
+        O Jornal do Amor
+      </h1>
+      
+      <!-- Detalhes de Edição com Bordas Duplas -->
+      <div class="double-border py-2.5 my-6 flex flex-col sm:flex-row justify-between items-center text-xs md:text-sm font-bold uppercase tracking-widest px-4 gap-2 border-txtCharcoal">
+        <div class="flex items-center space-x-2">
+          <span class="inline-block w-2 h-2 bg-accentRed rounded-full"></span>
+          <span>EDIÇÃO DOS NAMORADOS</span>
+        </div>
+        <div class="font-serif italic font-normal text-sm md:text-base">12 DE JUNHO DE 2026</div>
+        <div>PREÇO: INESTIMÁVEL</div>
+      </div>
+    </header>
+
+    <!-- 2. SEÇÃO HERO (Capa) -->
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 pb-12 border-b border-[#1a1a1a]/30">
+      
+      <!-- Coluna Esquerda: Matéria Principal (Tamanho 8/12) -->
+      <div class="lg:col-span-8 flex flex-col justify-between">
+        <div>
+          <!-- Emblema de Plantão -->
+          <div class="flex items-center space-x-2 mb-3">
+            <span class="inline-block bg-accentRed text-white text-[10px] md:text-xs font-black uppercase px-2.5 py-0.5 tracking-wider rounded-sm shadow-sm">
+              PLANTÃO
+            </span>
+            <span class="text-xs font-bold text-accentRed tracking-widest">URGENTE</span>
+          </div>
+
+          <!-- Manchete Principal -->
+          <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-black text-txtCharcoal leading-tight tracking-tight mb-5 hover:text-accentRed transition-colors duration-300">
+            A História Mais Extraordinária Já Contada
+          </h2>
+
+          <!-- Imagem de Destaque em Tons de Cinza -->
+          <div class="relative group overflow-hidden border border-[#1a1a1a]/60 p-1.5 bg-white shadow-sm mb-4">
+            <img 
+              src="assets/037AC0AD-1864-4287-8001-098A9C31D299.jpg" 
+              alt="Foto do casal na capa do jornal" 
+              class="w-full h-auto object-cover grayscale contrast-110 brightness-95 saturate-[0.1] group-hover:grayscale-0 group-hover:contrast-100 group-hover:saturate-100 transition-all duration-1000 ease-out"
+            >
+            <div class="absolute inset-0 bg-accentRed/5 opacity-60 pointer-events-none mix-blend-color-burn group-hover:opacity-0 transition-opacity duration-1000"></div>
+          </div>
+          
+          <!-- Legenda da Imagem -->
+          <p class="font-serif italic text-xs md:text-sm text-txtCharcoal/80 text-center mb-6 border-b border-[#1a1a1a]/10 pb-4">
+            Figura 1: Registro histórico da viagem a Florianópolis, onde o silêncio deu lugar ao início de nossa grande história de amor.
+          </p>
+        </div>
+
+        <!-- Texto da Matéria em Colunas de Jornal -->
+        <div class="columns-1 md:columns-2 gap-6 text-txtCharcoal/90 text-sm md:text-base leading-relaxed text-justify">
+          <p class="drop-cap mb-4">
+            Tudo começou com uma viagem para Florianópolis. Até aquele momento, dividíamos o mesmo espaço, mas quase não conversávamos. A estrada, no entanto, tinha outros planos. Entre passeios e saídas, uma amizade sincera floresceu e o flerte tornou-se inevitável, culminando no nosso primeiro beijo. Embora um pequeno "acidente" engraçado tenha impedido que fizéssemos algo mais naquele primeiro dia — um episódio que hoje nos arranca gargalhadas —, o destino já estava selado.
+          </p>
+          <p class="mb-4">
+            No dia seguinte, após ela sair com amigos e enviar uma mensagem que por sorte vi ao acordar, nos encontramos de verdade. A partir daquele instante, o amor ganhou velocidade. De volta a Blumenau, a distância tornou-se intolerável: passamos a nos ver diariamente. Ágata começou a frequentar minha casa todas as noites, e o WhatsApp tornou-se uma extensão de nossas mentes, com conversas que simplesmente não tinham fim.
+          </p>
+          <p class="mb-4">
+            A rotina rapidamente transformou-se em poesia compartilhada. Almoços juntos, noites conversando e o carinho mútuo pavimentaram o caminho para que Ágata se tornasse parte indispensável da minha vida, conquistando também o carinho da minha família. Descobrir que estávamos apaixonados foi um processo leve e divertido, marcado por confissões inesperadas e "Eu te amo" ditos nos momentos mais aleatórios e surpreendentes do dia a dia.
+          </p>
+          <p>
+            Três meses depois, o pedido oficial de namoro consolidou o que nossos corações já sabiam. Desde então, passamos a dividir todos os finais de semana, jantares e viagens especiais. Ágata conquistou meu lar e desenvolveu uma relação maravilhosa com meu pai — vê-los interagir e se dar tão bem é uma das minhas maiores alegrias. Hoje, celebrando o Dia dos Namorados, a manchete principal da minha vida é o sorriso dela. Sou grato e imensamente feliz por caminhar ao lado de quem transformou meu cotidiano em poesia.
+          </p>
+        </div>
+      </div>
+
+      <!-- Coluna Direita: Destaques Editoriais / Barra Lateral (Tamanho 4/12) -->
+      <aside class="lg:col-span-4 border-t lg:border-t-0 lg:border-l border-[#1a1a1a]/20 pt-8 lg:pt-0 lg:pl-8 flex flex-col justify-between">
+        <div>
+          <!-- Título da Barra Lateral -->
+          <div class="border-b-2 border-txtCharcoal pb-2 mb-6">
+            <h3 class="font-serif text-xl font-bold uppercase tracking-wider text-accentRed">
+              Destaques Editoriais
+            </h3>
+            <span class="text-[10px] tracking-widest uppercase font-bold text-txtCharcoal/65">Opinião & Crônica Especial</span>
+          </div>
+
+          <!-- Lista de Artigos da Barra Lateral -->
+          <div class="space-y-6">
+            <!-- Sub-artigo 1 -->
+            <article class="group">
+              <span class="text-[10px] font-bold text-accentRed uppercase tracking-widest">Coluna 1: Origens</span>
+              <h4 class="font-serif text-lg font-bold text-txtCharcoal group-hover:text-accentRed transition-colors duration-200 mt-1 mb-2">
+                A JORNADA
+              </h4>
+              <p class="text-xs md:text-sm text-txtCharcoal/80 leading-relaxed text-justify">
+                De uma ida silenciosa a Florianópolis ao início de conversas e flertes que mudaram o rumo de nossas vidas. A retrospectiva da viagem que serviu como ponto de partida.
+              </p>
+              <div class="sep-line opacity-30"></div>
+            </article>
+
+            <!-- Sub-artigo 2 -->
+            <article class="group">
+              <span class="text-[10px] font-bold text-accentRed uppercase tracking-widest">Coluna 2: Cotidiano</span>
+              <h4 class="font-serif text-lg font-bold text-txtCharcoal group-hover:text-accentRed transition-colors duration-200 mt-1 mb-2">
+                O RETORNO
+              </h4>
+              <p class="text-xs md:text-sm text-txtCharcoal/80 leading-relaxed text-justify">
+                Blumenau assiste de perto: a rotina que virou poesia com encontros diários todas as noites, almoços compartilhados e o WhatsApp repleto de conversas que nunca tinham fim.
+              </p>
+              <div class="sep-line opacity-30"></div>
+            </article>
+
+            <!-- Sub-artigo 3 -->
+            <article class="group">
+              <span class="text-[10px] font-bold text-accentRed uppercase tracking-widest">Coluna 3: Conexão</span>
+              <h4 class="font-serif text-lg font-bold text-txtCharcoal group-hover:text-accentRed transition-colors duration-200 mt-1 mb-2">
+                AS SURPRESAS
+              </h4>
+              <p class="text-xs md:text-sm text-txtCharcoal/80 leading-relaxed text-justify">
+                Os "Eu te amo" confessados de forma espontânea nos momentos mais aleatórios do cotidiano. Como a surpresa de se descobrir apaixonado desenhou nossa união.
+              </p>
+            </article>
+          </div>
+
+          <!-- Perfil da Editora-Chefe (Ágata) -->
+          <div class="mt-8 p-4 bg-accentRed/5 border-2 border-dashed border-accentRed/30 text-left rounded-sm relative">
+            <span class="absolute -top-3 left-4 bg-bgWarm px-2 text-[10px] font-black uppercase tracking-widest text-accentRed border border-accentRed/30">
+              Perfil da Editora-Chefe
+            </span>
+            <h4 class="font-serif text-lg font-bold text-txtCharcoal mt-1 mb-2">Ágata</h4>
+            <ul class="text-xs text-txtCharcoal/90 space-y-1.5 font-mono">
+              <li><strong>• Profissão:</strong> Estudante de Jornalismo</li>
+              <li><strong>• Paixões:</strong> Café forte & docinhos</li>
+              <li><strong>• Personalidade:</strong> Espontânea, divertida, meio "emburradinha" e seletiva</li>
+              <li><strong>• Hobby:</strong> Cuidar do cabelo (mesmo sob ameaças de arrancá-lo)</li>
+              <li><strong>• Química:</strong> Opostos perfeitos em pensamentos, mas sintonizados no amor</li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- 3. SEÇÃO DE LINHA DO TEMPO (A Crônica: Nossos Marcos) -->
+    <section class="py-16 border-b border-[#1a1a1a]/30" id="linha-do-tempo">
+      <!-- Cabeçalho de Seção -->
+      <div class="text-center mb-16">
+        <div class="inline-block border-y border-txtCharcoal py-2 px-8">
+          <h2 class="font-serif text-2xl md:text-4xl font-bold uppercase tracking-wider text-txtCharcoal">
+            A Crônica: Nossos Marcos
+          </h2>
+        </div>
+        <p class="text-xs md:text-sm text-txtCharcoal/60 mt-3 uppercase tracking-widest">Linha do tempo oficial dos nossos momentos mais preciosos</p>
+      </div>
+
+      <!-- Container da Linha do Tempo -->
+      <div class="relative max-w-4xl mx-auto">
+        <!-- Linha Central (Desktop) -->
+        <div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-[#1a1a1a]/25 -translate-x-1/2"></div>
+
+        <!-- Capítulo 1: O Silêncio Inicial (Esquerda) -->
+        <div class="reveal-item flex flex-col md:flex-row items-start md:justify-between mb-12 relative w-full pl-10 md:pl-0">
+          <div class="absolute left-0 md:left-1/2 -translate-x-1/2 w-9 h-9 bg-bgWarm border-2 border-accentRed rounded-full flex items-center justify-center z-10 shadow-sm text-accentRed">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+            </svg>
+          </div>
+          <div class="w-full md:w-[45%] bg-white border border-[#1a1a1a]/20 p-5 rounded shadow-sm hover:shadow-md transition-shadow duration-300">
+            <span class="inline-block bg-accentRed text-white text-[10px] font-bold px-2 py-0.5 rounded-sm uppercase tracking-wider mb-2">
+              Novembro de 2025
+            </span>
+            <h4 class="font-serif text-lg font-bold text-txtCharcoal mb-2">Capítulo I: O Silêncio Inicial</h4>
+            <p class="text-xs md:text-sm text-txtCharcoal/85 leading-relaxed">
+              Dividíamos o mesmo espaço em Blumenau, mas quase não conversávamos. Havia uma curiosidade silenciosa no ar, que apenas aguardava o momento certo para se manifestar.
+            </p>
+          </div>
+          <div class="hidden md:block w-[45%]"></div>
+        </div>
+
+        <!-- Capítulo 2: A Viagem Reveladora (Direita) -->
+        <div class="reveal-item flex flex-col md:flex-row-reverse items-start md:justify-between mb-12 relative w-full pl-10 md:pl-0">
+          <div class="absolute left-0 md:left-1/2 -translate-x-1/2 w-9 h-9 bg-bgWarm border-2 border-accentRed rounded-full flex items-center justify-center z-10 shadow-sm text-accentRed">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+            </svg>
+          </div>
+          <div class="w-full md:w-[45%] bg-white border border-[#1a1a1a]/20 p-5 rounded shadow-sm hover:shadow-md transition-shadow duration-300">
+            <span class="inline-block bg-accentRed text-white text-[10px] font-bold px-2 py-0.5 rounded-sm uppercase tracking-wider mb-2">
+              Florianópolis (Dia 1)
+            </span>
+            <h4 class="font-serif text-lg font-bold text-txtCharcoal mb-2">Capítulo II: A Estrada que Mudou Tudo</h4>
+            <p class="text-xs md:text-sm text-txtCharcoal/85 leading-relaxed">
+              A viagem reveladora. Na ida o silêncio persistia, mas em Florianópolis a amizade floresceu, o flerte começou e nosso primeiro beijo aconteceu. Rimos até hoje do "acidente" que nos impediu de fazer algo mais naquele dia.
+            </p>
+          </div>
+          <div class="hidden md:block w-[45%]"></div>
+        </div>
+
+        <!-- Capítulo 3: A Mensagem da Noite (Esquerda) -->
+        <div class="reveal-item flex flex-col md:flex-row items-start md:justify-between mb-12 relative w-full pl-10 md:pl-0">
+          <div class="absolute left-0 md:left-1/2 -translate-x-1/2 w-9 h-9 bg-bgWarm border-2 border-accentRed rounded-full flex items-center justify-center z-10 shadow-sm text-accentRed">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+            </svg>
+          </div>
+          <div class="w-full md:w-[45%] bg-white border border-[#1a1a1a]/20 p-5 rounded shadow-sm hover:shadow-md transition-shadow duration-300">
+            <span class="inline-block bg-accentRed text-white text-[10px] font-bold px-2 py-0.5 rounded-sm uppercase tracking-wider mb-2">
+              Florianópolis (Dia 2)
+            </span>
+            <h4 class="font-serif text-lg font-bold text-txtCharcoal mb-2">Capítulo III: O Encontro de Verdade</h4>
+            <p class="text-xs md:text-sm text-txtCharcoal/85 leading-relaxed">
+              Você saiu com seus amigos e me enviou uma mensagem à noite. Acordei por acaso, vi e nos encontramos. Foi ali que a nossa conexão se estabeleceu de forma definitiva e "ficamos" para valer.
+            </p>
+          </div>
+          <div class="hidden md:block w-[45%]"></div>
+        </div>
+
+        <!-- Capítulo 4: Inseparáveis (Direita) -->
+        <div class="reveal-item flex flex-col md:flex-row-reverse items-start md:justify-between mb-12 relative w-full pl-10 md:pl-0">
+          <div class="absolute left-0 md:left-1/2 -translate-x-1/2 w-9 h-9 bg-bgWarm border-2 border-accentRed rounded-full flex items-center justify-center z-10 shadow-sm text-accentRed">
+            <svg class="w-4 h-4 fill-accentRed" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+          </div>
+          <div class="w-full md:w-[45%] bg-white border border-[#1a1a1a]/20 p-5 rounded shadow-sm hover:shadow-md transition-shadow duration-300">
+            <span class="inline-block bg-accentRed text-white text-[10px] font-bold px-2 py-0.5 rounded-sm uppercase tracking-wider mb-2">
+              Janeiro de 2026
+            </span>
+            <h4 class="font-serif text-lg font-bold text-txtCharcoal mb-2">Capítulo IV: A Invasão do Cotidiano</h4>
+            <p class="text-xs md:text-sm text-txtCharcoal/85 leading-relaxed">
+              De volta a Blumenau, passamos a nos ver diariamente. Logo vieram os finais de semana juntos, jantares românticos, viagens e a forma incrivelmente especial como você conquistou minha família e meu pai.
+            </p>
+          </div>
+          <div class="hidden md:block w-[45%]"></div>
+        </div>
+
+        <!-- Capítulo 5: Lares & Pais (Esquerda) -->
+        <div class="reveal-item flex flex-col md:flex-row items-start md:justify-between mb-12 relative w-full pl-10 md:pl-0">
+          <div class="absolute left-0 md:left-1/2 -translate-x-1/2 w-9 h-9 bg-bgWarm border-2 border-accentRed rounded-full flex items-center justify-center z-10 shadow-sm text-accentRed">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+          </div>
+          <div class="w-full md:w-[45%] bg-white border border-[#1a1a1a]/20 p-5 rounded shadow-sm hover:shadow-md transition-shadow duration-300">
+            <span class="inline-block bg-accentRed text-white text-[10px] font-bold px-2 py-0.5 rounded-sm uppercase tracking-wider mb-2">
+              Fevereiro de 2026
+            </span>
+            <h4 class="font-serif text-lg font-bold text-txtCharcoal mb-2">Capítulo V: Lares & Pais</h4>
+            <p class="text-xs md:text-sm text-txtCharcoal/85 leading-relaxed">
+              Você começou a frequentar meus finais de semana, almoços e a conhecer minha família. Ver a conexão linda e o carinho sincero que nasceu entre você e meu pai se tornou uma das minhas maiores alegrias.
+            </p>
+          </div>
+          <div class="hidden md:block w-[45%]"></div>
+        </div>
+
+        <!-- Capítulo 6: Declarações (Direita) -->
+        <div class="reveal-item flex flex-col md:flex-row-reverse items-start md:justify-between mb-12 relative w-full pl-10 md:pl-0">
+          <div class="absolute left-0 md:left-1/2 -translate-x-1/2 w-9 h-9 bg-bgWarm border-2 border-accentRed rounded-full flex items-center justify-center z-10 shadow-sm text-accentRed">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.907c.961 0 1.36 1.242.588 1.81l-3.97 2.883a1 1 0 00-.364 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.971-2.883a1 1 0 00-1.175 0l-3.97 2.883c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h4.906a1 1 0 00.951-.69l1.519-4.674z" />
+            </svg>
+          </div>
+          <div class="w-full md:w-[45%] bg-white border border-[#1a1a1a]/20 p-5 rounded shadow-sm hover:shadow-md transition-shadow duration-300">
+            <span class="inline-block bg-accentRed text-white text-[10px] font-bold px-2 py-0.5 rounded-sm uppercase tracking-wider mb-2">
+              Março de 2026
+            </span>
+            <h4 class="font-serif text-lg font-bold text-txtCharcoal mb-2">Capítulo VI: Os "Eu te amo" Inesperados</h4>
+            <p class="text-xs md:text-sm text-txtCharcoal/85 leading-relaxed">
+              A descoberta mútua da paixão. Os sentimentos transbordaram de forma espontânea, com declarações e surpresas sussurradas nos momentos mais descontraídos e inesperados da nossa rotina.
+            </p>
+          </div>
+          <div class="hidden md:block w-[45%]"></div>
+        </div>
+
+        <!-- Capítulo 7: O Pedido (Esquerda) -->
+        <div class="reveal-item flex flex-col md:flex-row items-start md:justify-between mb-12 relative w-full pl-10 md:pl-0">
+          <div class="absolute left-0 md:left-1/2 -translate-x-1/2 w-9 h-9 bg-bgWarm border-2 border-accentRed rounded-full flex items-center justify-center z-10 shadow-sm text-accentRed">
+            <svg class="w-4 h-4 fill-accentRed" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+          </div>
+          <div class="w-full md:w-[45%] bg-white border border-[#1a1a1a]/20 p-5 rounded shadow-sm hover:shadow-md transition-shadow duration-300">
+            <span class="inline-block bg-accentRed text-white text-[10px] font-bold px-2 py-0.5 rounded-sm uppercase tracking-wider mb-2">
+              Março de 2026 (3 Meses)
+            </span>
+            <h4 class="font-serif text-lg font-bold text-txtCharcoal mb-2">Capítulo VII: O Pedido de Namoro</h4>
+            <p class="text-xs md:text-sm text-txtCharcoal/85 leading-relaxed">
+              O selo oficial da nossa história. Com três meses de cumplicidade diária, decidimos formalizar nosso caminhar lado a lado, dando início a uma parceria que hoje me faz o homem mais feliz do mundo.
+            </p>
+          </div>
+          <div class="hidden md:block w-[45%]"></div>
+        </div>
+
+        <!-- Capítulo 8: Meio Ano Juntos (Direita) -->
+        <div class="reveal-item flex flex-col md:flex-row-reverse items-start md:justify-between mb-4 relative w-full pl-10 md:pl-0">
+          <div class="absolute left-0 md:left-1/2 -translate-x-1/2 w-9 h-9 bg-bgWarm border-2 border-accentRed rounded-full flex items-center justify-center z-10 shadow-sm text-accentRed">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <div class="w-full md:w-[45%] bg-white border border-[#1a1a1a]/20 p-5 rounded shadow-sm hover:shadow-md transition-shadow duration-300">
+            <span class="inline-block bg-accentRed text-white text-[10px] font-bold px-2 py-0.5 rounded-sm uppercase tracking-wider mb-2">
+              Junho de 2026 (6 Meses)
+            </span>
+            <h4 class="font-serif text-lg font-bold text-txtCharcoal mb-2">Capítulo VIII: Meio Ano de Amor</h4>
+            <p class="text-xs md:text-sm text-txtCharcoal/85 leading-relaxed">
+              Nosso primeiro Dia dos Namorados juntos. São 6 meses compartilhando sorrisos, viagens, opostos perfeitos e a certeza absoluta de que quero compartilhar o resto da minha vida ao seu lado.
+            </p>
+          </div>
+          <div class="hidden md:block w-[45%]"></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 4. SEÇÃO DE PLAYER DE ÁUDIO (A Trilha Sonora Diária) -->
+    <section class="py-16 border-b border-[#1a1a1a]/30 text-center" id="trilha-sonora">
+      <!-- Título de Seção -->
+      <div class="mb-12">
+        <div class="inline-block border-y border-txtCharcoal py-2 px-8">
+          <h2 class="font-serif text-2xl md:text-4xl font-bold uppercase tracking-wider text-txtCharcoal">
+            A Trilha Sonora Diária
+          </h2>
+        </div>
+        <p class="text-xs md:text-sm text-txtCharcoal/60 mt-3 uppercase tracking-widest">Sintonize os acordes do nosso amor</p>
+      </div>
+
+      <!-- Player de Áudio Minimalista -->
+      <div class="max-w-md mx-auto bg-white border border-[#1a1a1a]/20 p-6 rounded shadow-md relative overflow-hidden">
+        <!-- Textura de Vinil Decorativa de Fundo -->
+        <div class="absolute -right-16 -top-16 w-36 h-36 border border-txtCharcoal/10 rounded-full flex items-center justify-center opacity-30 pointer-events-none">
+          <div class="w-24 h-24 border border-txtCharcoal/10 rounded-full flex items-center justify-center">
+            <div class="w-12 h-12 bg-accentRed/10 rounded-full"></div>
+          </div>
+        </div>
+
+        <div class="flex items-center space-x-6 relative z-10">
+          <!-- Botão Play/Pause Vermelho -->
+          <button id="player-play-btn" class="w-16 h-16 bg-accentRed hover:bg-[#700000] text-white rounded-full flex items-center justify-center shadow-lg transition-transform hover:scale-105 active:scale-95 duration-200">
+            <!-- Ícone de Play -->
+            <svg id="play-icon" class="w-7 h-7 fill-white ml-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+            <!-- Ícone de Pause (escondido) -->
+            <svg id="pause-icon" class="w-7 h-7 fill-white hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+            </svg>
+          </button>
+
+          <!-- Informações da Música -->
+          <div class="text-left flex-1">
+            <span class="text-[9px] font-extrabold uppercase tracking-widest text-accentRed bg-accentRed/10 px-2 py-0.5 rounded-sm">
+              TOCANDO DO VINIL
+            </span>
+            <h4 class="font-serif text-lg font-bold text-txtCharcoal mt-1 truncate max-w-[200px]" id="song-title">
+              You Belong With Me
+            </h4>
+            <p class="text-xs text-txtCharcoal/65 font-mono mt-0.5">Taylor Swift (Edição Vinil)</p>
+          </div>
+        </div>
+
+        <!-- Barra de Progresso e Tempo -->
+        <div class="mt-6">
+          <div class="relative w-full h-1 bg-txtCharcoal/10 rounded cursor-pointer" id="progress-bar-container">
+            <div class="absolute top-0 left-0 h-full bg-accentRed rounded w-0" id="progress-bar-fill"></div>
+            <!-- Marcador/Knob -->
+            <div class="absolute -top-1.5 w-4 h-4 bg-accentRed border-2 border-white rounded-full shadow-sm cursor-pointer -translate-x-1/2 left-0" id="progress-knob"></div>
+          </div>
+          <div class="flex justify-between items-center text-xs text-txtCharcoal/60 font-mono mt-2 select-none">
+            <span id="current-time">0:00</span>
+            <span id="total-time">3:45</span>
+          </div>
+        </div>
+
+        <!-- Pequeno lembrete interativo -->
+        <p class="text-[10px] text-txtCharcoal/50 italic mt-4">
+          * Aumente o som. Nossa música favorita misturada a um sutil estalo de vinil tocando exclusivamente para você.
+        </p>
+      </div>
+    </section>
+
+    <!-- 5. SEÇÃO DE GALERIA (Arquivos Exclusivos) -->
+    <section class="py-16 border-b border-[#1a1a1a]/30" id="arquivos-exclusivos">
+      <!-- Título de Seção -->
+      <div class="text-center mb-16">
+        <div class="inline-block border-y border-txtCharcoal py-2 px-8">
+          <h2 class="font-serif text-2xl md:text-4xl font-bold uppercase tracking-wider text-txtCharcoal">
+            Arquivos Exclusivos
+          </h2>
+        </div>
+        <p class="text-xs md:text-sm text-txtCharcoal/60 mt-3 uppercase tracking-widest">Registros de amor congelados no tempo</p>
+      </div>
+
+      <!-- Grid de 3 Colunas Polaroid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-5xl mx-auto px-4">
+        
+        <!-- Polaroid 1 -->
+        <div class="reveal-item bg-white p-4 pb-8 border border-[#1a1a1a]/15 shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-rotate-2 hover:scale-[1.03] flex flex-col justify-between">
+          <div class="relative overflow-hidden aspect-square border border-txtCharcoal/10 bg-zinc-100">
+            <img src="assets/5fc5f4bb-9c4e-40c4-9288-74f010dad5ce.jpg" alt="Foto do casal" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-amber-900/5 mix-blend-color-burn"></div>
+          </div>
+          <div class="mt-4 text-center">
+            <p class="font-handwritten text-2xl md:text-3xl text-txtCharcoal rotate-1 select-none">
+              "O melhor sorriso é o seu."
+            </p>
+            <p class="text-[10px] font-mono text-txtCharcoal/55 tracking-wider uppercase mt-2">Outubro de 2024</p>
+          </div>
+        </div>
+
+        <!-- Polaroid 2 -->
+        <div class="reveal-item bg-white p-4 pb-8 border border-[#1a1a1a]/15 shadow-md hover:shadow-2xl transition-all duration-300 transform hover:rotate-1 hover:scale-[1.03] flex flex-col justify-between">
+          <div class="relative overflow-hidden aspect-square border border-txtCharcoal/10 bg-zinc-100">
+            <img src="assets/IMG_1313.jpg" alt="Foto do casal" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-amber-900/5 mix-blend-color-burn"></div>
+          </div>
+          <div class="mt-4 text-center">
+            <p class="font-handwritten text-2xl md:text-3xl text-txtCharcoal -rotate-1 select-none">
+              "Colecionando instantes ao seu lado."
+            </p>
+            <p class="text-[10px] font-mono text-txtCharcoal/55 tracking-wider uppercase mt-2">Dezembro de 2024</p>
+          </div>
+        </div>
+
+        <!-- Polaroid 3 -->
+        <div class="reveal-item bg-white p-4 pb-8 border border-[#1a1a1a]/15 shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-rotate-1 hover:scale-[1.03] flex flex-col justify-between">
+          <div class="relative overflow-hidden aspect-square border border-txtCharcoal/10 bg-zinc-100">
+            <img src="assets/IMG_2099.jpg" alt="Foto do casal" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-amber-900/5 mix-blend-color-burn"></div>
+          </div>
+          <div class="mt-4 text-center">
+            <p class="font-handwritten text-2xl md:text-3xl text-txtCharcoal rotate-2 select-none">
+              "Para sempre cúmplices."
+            </p>
+            <p class="text-[10px] font-mono text-txtCharcoal/55 tracking-wider uppercase mt-2">Fevereiro de 2025</p>
+          </div>
+        </div>
+
+        <!-- Polaroid 4 -->
+        <div class="reveal-item bg-white p-4 pb-8 border border-[#1a1a1a]/15 shadow-md hover:shadow-2xl transition-all duration-300 transform hover:rotate-2 hover:scale-[1.03] flex flex-col justify-between">
+          <div class="relative overflow-hidden aspect-square border border-txtCharcoal/10 bg-zinc-100">
+            <img src="assets/IMG_2186.jpg" alt="Foto do casal" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-amber-900/5 mix-blend-color-burn"></div>
+          </div>
+          <div class="mt-4 text-center">
+            <p class="font-handwritten text-2xl md:text-3xl text-txtCharcoal rotate-1 select-none">
+              "O calor do seu abraço."
+            </p>
+            <p class="text-[10px] font-mono text-txtCharcoal/55 tracking-wider uppercase mt-2">Abril de 2025</p>
+          </div>
+        </div>
+
+        <!-- Polaroid 5 -->
+        <div class="reveal-item bg-white p-4 pb-8 border border-[#1a1a1a]/15 shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-rotate-1 hover:scale-[1.03] flex flex-col justify-between">
+          <div class="relative overflow-hidden aspect-square border border-txtCharcoal/10 bg-zinc-100">
+            <img src="assets/IMG_2213.jpg" alt="Foto do casal" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-amber-900/5 mix-blend-color-burn"></div>
+          </div>
+          <div class="mt-4 text-center">
+            <p class="font-handwritten text-2xl md:text-3xl text-txtCharcoal -rotate-2 select-none">
+              "Sob a luz dos nossos sonhos."
+            </p>
+            <p class="text-[10px] font-mono text-txtCharcoal/55 tracking-wider uppercase mt-2">Julho de 2025</p>
+          </div>
+        </div>
+
+        <!-- Polaroid 6 -->
+        <div class="reveal-item bg-white p-4 pb-8 border border-[#1a1a1a]/15 shadow-md hover:shadow-2xl transition-all duration-300 transform hover:rotate-1 hover:scale-[1.03] flex flex-col justify-between">
+          <div class="relative overflow-hidden aspect-square border border-txtCharcoal/10 bg-zinc-100">
+            <img src="assets/IMG_2263.jpg" alt="Foto do casal" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-amber-900/5 mix-blend-color-burn"></div>
+          </div>
+          <div class="mt-4 text-center">
+            <p class="font-handwritten text-2xl md:text-3xl text-txtCharcoal rotate-1 select-none">
+              "Registros de um amor eterno."
+            </p>
+            <p class="text-[10px] font-mono text-txtCharcoal/55 tracking-wider uppercase mt-2">Setembro de 2025</p>
+          </div>
+        </div>
+
+    </section>
+
+    <!-- 5.1. SEÇÃO DO ÁLBUM DE MEMÓRIAS INTERATIVO -->
+    <section class="py-16 border-b border-[#1a1a1a]/30 text-center animate-fade-in" id="album-interativo">
+      <!-- Título de Seção -->
+      <div class="mb-12">
+        <div class="inline-block border-y border-txtCharcoal py-2 px-8">
+          <h2 class="font-serif text-2xl md:text-4xl font-bold uppercase tracking-wider text-txtCharcoal">
+            Álbum de Memórias Interativo
+          </h2>
+        </div>
+        <p class="text-xs md:text-sm text-txtCharcoal/60 mt-3 uppercase tracking-widest">Clique para revelar nossas fotos e crônicas adicionais</p>
+      </div>
+
+      <!-- Área de Controle do Álbum -->
+      <div class="max-w-md mx-auto mb-8">
+        <button id="btn-reveal-photo" class="bg-accentRed hover:bg-[#700000] text-white font-bold uppercase px-6 py-3 tracking-widest transition-all duration-300 transform active:scale-95 shadow border border-txtCharcoal rounded-sm">
+          Revelar Próxima Memória
+        </button>
+      </div>
+
+      <!-- Container do Deck de Polaroids (Fisicamente empilhado com sombras e rotações) -->
+      <div class="relative w-80 h-[380px] mx-auto mt-6" id="interactive-polaroid-deck" style="perspective: 1000px;">
+        <!-- Placeholder visual de câmera vintage / caixa de fotos -->
+        <div class="absolute inset-0 border-4 border-double border-txtCharcoal/20 flex flex-col items-center justify-center bg-txtCharcoal/[0.02] rounded-md pointer-events-none">
+          <svg class="w-16 h-16 text-txtCharcoal/15 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          </svg>
+          <span class="font-serif text-sm italic text-txtCharcoal/30 select-none">Caixa de Recordações</span>
+          <span class="text-[9px] font-mono uppercase tracking-wider text-txtCharcoal/20 mt-1 select-none">Clique no botão para revelar</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. RODAPÉ (Nota Editorial) -->
+    <footer class="pt-12 text-center" id="nota-editorial">
+      <div class="bg-txtCharcoal/5 border border-[#1a1a1a]/10 p-8 md:p-12 rounded-lg max-w-3xl mx-auto shadow-inner relative">
+        
+        <!-- Aspa Decorativa -->
+        <div class="absolute top-2 left-6 text-txtCharcoal/10 font-serif text-8xl leading-none select-none">“</div>
+        
+        <h3 class="font-serif text-xl md:text-2xl font-bold uppercase tracking-wider text-accentRed mb-6">
+          Nota Editorial: Uma Reflexão Pessoal
+        </h3>
+        
+        <blockquote class="font-serif italic text-lg md:text-2xl text-txtCharcoal/95 leading-relaxed max-w-2xl mx-auto my-6 px-6 relative z-10">
+          "Ágata, quem diria que aquela viagem silenciosa a Floripa seria o início do melhor capítulo da minha vida? Da nossa volta para Blumenau aos 'Eu te amo' espontâneos, obrigado por tornar cada dia inestimável. Feliz Dia dos Namorados!"
+        </blockquote>
+        
+        <!-- Assinatura Romântica -->
+        <div class="mt-8 text-center">
+          <span class="inline-block w-8 h-px bg-accentRed mb-1"></span>
+          <p class="font-handwritten text-3xl text-accentRed">Com todo o meu amor</p>
+          <span class="text-xs uppercase tracking-widest text-txtCharcoal/50 font-bold block mt-1">Editor Chefe do Destino</span>
+        </div>
+      </div>
+
+      <!-- Links do Rodapé & Copyright -->
+      <div class="mt-16 border-t border-[#1a1a1a]/15 pt-8 flex flex-col items-center gap-6">
+        
+        <!-- Links de Navegação Secundária -->
+        <div class="flex flex-wrap justify-center gap-6 md:gap-8 text-xs font-bold uppercase tracking-widest text-txtCharcoal/70">
+          <a href="#linha-do-tempo" class="hover:text-accentRed transition-colors duration-200">Conselho Editorial</a>
+          <span class="text-txtCharcoal/30 hidden sm:inline">•</span>
+          <button onclick="openMessageModal()" class="hover:text-accentRed transition-colors duration-200 focus:outline-none">Escreva para Nós</button>
+          <span class="text-txtCharcoal/30 hidden sm:inline">•</span>
+          <a href="#" class="hover:text-accentRed transition-colors duration-200">Nossa História</a>
+        </div>
+
+        <!-- Copyright -->
+        <p class="text-[10px] font-mono tracking-widest uppercase text-txtCharcoal/50">
+          © 2026 POR O JORNAL DO AMOR. TODOS OS DIREITOS RESERVADOS.
+        </p>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- MODAL DE COMPARTILHAMENTO (Telegrama Retrô) -->
+  <div id="share-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300">
+    <div class="bg-bgWarm border-4 border-double border-txtCharcoal max-w-md w-[90%] p-6 shadow-2xl relative transform scale-90 transition-transform duration-300" id="share-modal-content">
+      <!-- Botão Fechar -->
+      <button onclick="closeShareModal()" class="absolute top-3 right-3 text-txtCharcoal hover:text-accentRed transition-colors duration-200">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+      <!-- Telegrama Header -->
+      <div class="text-center border-b-2 border-txtCharcoal pb-4 mb-4">
+        <h4 class="font-serif text-2xl font-black tracking-widest uppercase text-txtCharcoal">Urgente: Compartilhar</h4>
+        <span class="text-[10px] uppercase font-bold tracking-widest text-accentRed">Serviço de Telegramas Românticos</span>
+      </div>
+
+      <p class="text-xs md:text-sm text-txtCharcoal/80 mb-6 text-center leading-relaxed">
+        Espalhe a manchete mais romântica do ano. Copie o link abaixo para enviar este presente especial para quem você ama:
+      </p>
+
+      <!-- Campo de Link -->
+      <div class="flex items-center border border-txtCharcoal bg-white p-2 rounded mb-4">
+        <input 
+          id="share-link-input" 
+          type="text" 
+          readonly 
+          class="flex-1 text-xs font-mono text-txtCharcoal bg-transparent border-none outline-none focus:ring-0 cursor-all"
+        >
+        <button id="btn-copy-link" class="bg-accentRed text-white text-xs font-bold uppercase px-3 py-1.5 tracking-wider hover:bg-[#700000] active:scale-95 transition-all duration-200 rounded-sm">
+          Copiar
+        </button>
+      </div>
+
+      <!-- Mensagem de Feedback de Cópia -->
+      <p id="copy-success-msg" class="text-[11px] text-green-700 font-bold text-center h-4 opacity-0 transition-opacity duration-300">
+        ✓ Link copiado com sucesso para a área de transferência!
+      </p>
+    </div>
+  </div>
+
+  <!-- MODAL DE CONTATO / TELEGRAMA DO LEITOR -->
+  <div id="contact-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300">
+    <div class="bg-bgWarm border-4 border-double border-txtCharcoal max-w-lg w-[90%] p-6 shadow-2xl relative transform scale-90 transition-transform duration-300" id="contact-modal-content">
+      <!-- Botão Fechar -->
+      <button onclick="closeMessageModal()" class="absolute top-3 right-3 text-txtCharcoal hover:text-accentRed transition-colors duration-200">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+      <!-- Telegrama Header -->
+      <div class="text-center border-b-2 border-txtCharcoal pb-4 mb-4">
+        <h4 class="font-serif text-2xl font-black tracking-widest uppercase text-txtCharcoal">Escreva para Nós</h4>
+        <span class="text-[10px] uppercase font-bold tracking-widest text-accentRed">Envie uma Mensagem de Amor</span>
+      </div>
+
+      <!-- Formulário Telegrama -->
+      <form id="contact-form" onsubmit="handleContactSubmit(event)" class="space-y-4">
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-txtCharcoal/70 mb-1" for="contact-name">Seu Nome:</label>
+          <input 
+            type="text" 
+            id="contact-name" 
+            required 
+            class="w-full border border-txtCharcoal p-2 text-sm bg-white focus:outline-none focus:ring-1 focus:ring-accentRed"
+          >
+        </div>
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-txtCharcoal/70 mb-1" for="contact-message">Sua Carta/Mensagem:</label>
+          <textarea 
+            id="contact-message" 
+            rows="4" 
+            required 
+            placeholder="Escreva sua nota romântica ou mensagem aqui..."
+            class="w-full border border-txtCharcoal p-2 text-sm bg-white focus:outline-none focus:ring-1 focus:ring-accentRed"
+          ></textarea>
+        </div>
+        <button type="submit" class="w-full bg-accentRed text-white font-bold uppercase py-2 tracking-widest hover:bg-[#700000] active:scale-98 transition-all duration-200">
+          Enviar Telegrama
+        </button>
+      </form>
+
+      <!-- Confirmação de Sucesso -->
+      <div id="contact-success-msg" class="hidden text-center py-6">
+        <svg class="w-12 h-12 text-accentRed mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        <h5 class="font-serif text-xl font-bold mb-2">Telegrama Enviado!</h5>
+        <p class="text-xs text-txtCharcoal/75">Sua carta foi impressa com sucesso e arquivada nos corações editoriais.</p>
+        <button onclick="closeMessageModal()" class="mt-4 border border-txtCharcoal px-4 py-1.5 text-xs font-bold uppercase hover:bg-txtCharcoal hover:text-white transition-colors duration-200">
+          Fechar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPT LOGIC -->
+  <script>
+    // -------------------------------------------------------------
+    // 1. REVELAÇÃO NO SCROLL (Animações suaves da linha do tempo/galeria)
+    // -------------------------------------------------------------
+    const revealItems = document.querySelectorAll('.reveal-item');
+    const observerOptions = {
+      root: null,
+      threshold: 0.15,
+      rootMargin: "0px 0px -50px 0px"
+    };
+
+    const scrollObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          // Desobserva para manter o estado ativo
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    revealItems.forEach(item => {
+      scrollObserver.observe(item);
+    });
+
+    // -------------------------------------------------------------
+    // 2. SISTEMA DE COMPARTILHAMENTO
+    // -------------------------------------------------------------
+    const btnShare = document.getElementById('btn-share');
+    const shareModal = document.getElementById('share-modal');
+    const shareModalContent = document.getElementById('share-modal-content');
+    const shareLinkInput = document.getElementById('share-link-input');
+    const btnCopyLink = document.getElementById('btn-copy-link');
+    const copySuccessMsg = document.getElementById('copy-success-msg');
+
+    // Preenche a URL atual no input
+    shareLinkInput.value = window.location.href;
+
+    btnShare.addEventListener('click', async () => {
+      // Tenta usar Web Share API se disponível (dispositivos móveis)
+      if (navigator.share) {
+        try {
+          await navigator.share({
+            title: 'O Jornal do Amor',
+            text: 'Leia a edição especial sobre a história de amor mais linda do mundo!',
+            url: window.location.href,
+          });
+          return;
+        } catch (err) {
+          // Se o usuário cancelar ou houver erro, prossegue com o modal normal
+          console.log('Web Share cancelado ou não suportado, usando modal clássico.');
+        }
+      }
+      // Abre o modal para cópia manual
+      openShareModal();
+    });
+
+    function openShareModal() {
+      shareModal.classList.remove('opacity-0', 'pointer-events-none');
+      shareModalContent.classList.remove('scale-90');
+      shareModalContent.classList.add('scale-100');
+    }
+
+    function closeShareModal() {
+      shareModal.classList.add('opacity-0', 'pointer-events-none');
+      shareModalContent.classList.remove('scale-100');
+      shareModalContent.classList.add('scale-90');
+      copySuccessMsg.classList.add('opacity-0');
+    }
+
+    // Copiar link para área de transferência
+    btnCopyLink.addEventListener('click', () => {
+      shareLinkInput.select();
+      shareLinkInput.setSelectionRange(0, 99999); // Suporte móvel
+      
+      navigator.clipboard.writeText(shareLinkInput.value).then(() => {
+        // Mostra mensagem de sucesso
+        copySuccessMsg.classList.remove('opacity-0');
+        copySuccessMsg.classList.add('opacity-100');
+        setTimeout(() => {
+          copySuccessMsg.classList.remove('opacity-100');
+          copySuccessMsg.classList.add('opacity-0');
+        }, 3000);
+      }).catch(err => {
+        console.error('Falha ao copiar: ', err);
+      });
+    });
+
+    // -------------------------------------------------------------
+    // 3. FORMULÁRIO DE CONTATO (TELEGRAMA)
+    // -------------------------------------------------------------
+    const contactModal = document.getElementById('contact-modal');
+    const contactModalContent = document.getElementById('contact-modal-content');
+    const contactForm = document.getElementById('contact-form');
+    const contactSuccessMsg = document.getElementById('contact-success-msg');
+
+    function openMessageModal() {
+      contactModal.classList.remove('opacity-0', 'pointer-events-none');
+      contactModalContent.classList.remove('scale-90');
+      contactModalContent.classList.add('scale-100');
+      contactForm.classList.remove('hidden');
+      contactSuccessMsg.classList.add('hidden');
+    }
+
+    function closeMessageModal() {
+      contactModal.classList.add('opacity-0', 'pointer-events-none');
+      contactModalContent.classList.remove('scale-100');
+      contactModalContent.classList.add('scale-90');
+    }
+
+    function handleContactSubmit(event) {
+      event.preventDefault();
+      // Simulação de envio com efeito retrô
+      contactForm.classList.add('hidden');
+      contactSuccessMsg.classList.remove('hidden');
+      contactForm.reset();
+    }
+
+    // -------------------------------------------------------------
+    // 4. PLAYER DE ÁUDIO (Música Real + Estalo de Vinil Web Audio)
+    // -------------------------------------------------------------
+    let audioCtx = null;
+    let synthPlaying = false;
+    
+    const playBtn = document.getElementById('player-play-btn');
+    const playIcon = document.getElementById('play-icon');
+    const pauseIcon = document.getElementById('pause-icon');
+    const progressBarFill = document.getElementById('progress-bar-fill');
+    const progressKnob = document.getElementById('progress-knob');
+    const progressBarContainer = document.getElementById('progress-bar-container');
+    const currentTimeText = document.getElementById('current-time');
+    const totalTimeText = document.getElementById('total-time');
+
+    // Inicializa o objeto de áudio HTML5 com a música do usuário
+    const musicAudio = new Audio('assets/you_belong_with_me.mp3');
+
+    // Atualiza a duração total da música ao carregar
+    musicAudio.addEventListener('loadedmetadata', () => {
+      const duration = musicAudio.duration;
+      const mins = Math.floor(duration / 60);
+      const secs = Math.floor(duration % 60);
+      totalTimeText.innerText = `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+    });
+
+    // Atualiza a barra de progresso conforme a música avança
+    musicAudio.addEventListener('timeupdate', () => {
+      if (musicAudio.duration) {
+        const percentage = (musicAudio.currentTime / musicAudio.duration) * 100;
+        progressBarFill.style.width = percentage + '%';
+        progressKnob.style.left = percentage + '%';
+
+        const mins = Math.floor(musicAudio.currentTime / 60);
+        const secs = Math.floor(musicAudio.currentTime % 60);
+        currentTimeText.innerText = `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+      }
+    });
+
+    // Quando a música terminar, redefine o player
+    musicAudio.addEventListener('ended', () => {
+      synthPlaying = false;
+      playIcon.classList.remove('hidden');
+      pauseIcon.classList.add('hidden');
+      stopVinylCrackle();
+    });
+
+    // Gerador de Ruído de Vinil (Estalos analógicos em segundo plano)
+    function startVinylCrackle() {
+      if (!audioCtx) return;
+
+      const bufferSize = audioCtx.sampleRate * 2;
+      const noiseBuffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+      const output = noiseBuffer.getChannelData(0);
+      
+      for (let i = 0; i < bufferSize; i++) {
+        const white = Math.random() * 2 - 1;
+        const cracklePop = Math.random() > 0.9996 ? (Math.random() * 0.4 - 0.2) : 0;
+        output[i] = white * 0.004 + cracklePop * 0.05;
+      }
+
+      const noiseSource = audioCtx.createBufferSource();
+      noiseSource.buffer = noiseBuffer;
+      noiseSource.loop = true;
+
+      const noiseGain = audioCtx.createGain();
+      noiseGain.gain.setValueAtTime(0.04, audioCtx.currentTime); // Ruído de fundo suave
+
+      noiseSource.connect(noiseGain);
+      noiseGain.connect(audioCtx.destination);
+      noiseSource.start(0);
+
+      window.vinylNoiseSource = noiseSource;
+    }
+
+    function stopVinylCrackle() {
+      if (window.vinylNoiseSource) {
+        try {
+          window.vinylNoiseSource.stop();
+        } catch(e) {}
+        window.vinylNoiseSource = null;
+      }
+    }
+
+    // Ações da Tela de Abertura (Intro Overlay)
+    const btnEnter = document.getElementById('btn-enter');
+    const introOverlay = document.getElementById('intro-overlay');
+
+    btnEnter.addEventListener('click', () => {
+      // Cria Contexto de Áudio se necessário
+      if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+
+      // Resume contexto se suspenso
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+
+      // Esconde a tela de abertura
+      introOverlay.classList.add('opacity-0', 'pointer-events-none');
+
+      // Toca a música e o vinil automaticamente!
+      if (!synthPlaying) {
+        synthPlaying = true;
+        playIcon.classList.add('hidden');
+        pauseIcon.classList.remove('hidden');
+        
+        startVinylCrackle();
+        musicAudio.play().catch(err => {
+          console.error("Falha ao tocar áudio: ", err);
+        });
+      }
+    });
+
+    // Ações do Botão Play/Pause
+    playBtn.addEventListener('click', () => {
+      // Cria Contexto de Áudio se necessário (para o estalo do vinil)
+      if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+
+      // Resume contexto se suspenso
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+
+      if (!synthPlaying) {
+        // Play
+        synthPlaying = true;
+        playIcon.classList.add('hidden');
+        pauseIcon.classList.remove('hidden');
+        
+        startVinylCrackle();
+        musicAudio.play().catch(err => {
+          console.error("Falha ao tocar áudio: ", err);
+        });
+      } else {
+        // Pause
+        synthPlaying = false;
+        playIcon.classList.remove('hidden');
+        pauseIcon.classList.add('hidden');
+        
+        stopVinylCrackle();
+        musicAudio.pause();
+      }
+    });
+
+    // Clique e ajuste manual da barra de progresso (Scrubbing)
+    progressBarContainer.addEventListener('click', (e) => {
+      const rect = progressBarContainer.getBoundingClientRect();
+      const clickX = e.clientX - rect.left;
+      const width = rect.width;
+      const clickedPercentage = clickX / width;
+      
+      if (musicAudio.duration) {
+        musicAudio.currentTime = clickedPercentage * musicAudio.duration;
+      }
+    });
+
+    // -------------------------------------------------------------
+    // 5. ÁLBUM DE MEMÓRIAS INTERATIVO (Polaroids que voam e acumulam)
+    // -------------------------------------------------------------
+    const extraPhotos = [
+      { src: 'assets/IMG_2268.jpg', caption: 'Sorrindo sem motivo, só por estar com você.', date: 'Outubro de 2025' },
+      { src: 'assets/IMG_2382.jpg', caption: 'Mais um dia comum transformado em memória.', date: 'Novembro de 2025' },
+      { src: 'assets/IMG_2384.jpg', caption: 'A cumplicidade desenhada em cada olhar.', date: 'Dezembro de 2025' },
+      { src: 'assets/IMG_2725.jpg', caption: 'Qualquer lugar é perfeito com você ao lado.', date: 'Janeiro de 2026' },
+      { src: 'assets/IMG_2826.jpg', caption: 'Nossos instantes eternizados em cores.', date: 'Fevereiro de 2026' },
+      { src: 'assets/IMG_2882.jpg', caption: 'O riso leve e descontraído de Blumenau.', date: 'Março de 2026' },
+      { src: 'assets/IMG_3184.jpg', caption: 'Construindo o nosso próprio castelo de sonhos.', date: 'Abril de 2026' },
+      { src: 'assets/IMG_3218.jpg', caption: 'Para sempre guardada no meu melhor lugar.', date: 'Maio de 2026' }
+    ];
+
+    let currentPhotoIndex = 0;
+    let currentZIndex = 10;
+
+    const btnReveal = document.getElementById('btn-reveal-photo');
+    const deckContainer = document.getElementById('interactive-polaroid-deck');
+
+    // Função de revelação de Polaroids com efeitos de voo
+    btnReveal.addEventListener('click', () => {
+      if (currentPhotoIndex >= extraPhotos.length) {
+        // Reinicia o deck quando todas forem exibidas (efeito de embaralhar)
+        deckContainer.querySelectorAll('.interactive-polaroid-card').forEach(card => {
+          card.style.transform = 'scale(0.8) translate(-400px, 400px) rotate(-90deg)';
+          card.style.opacity = '0';
+          setTimeout(() => card.remove(), 800);
+        });
+        currentPhotoIndex = 0;
+        btnReveal.innerText = 'Revelar Próxima Memória';
+        return;
+      }
+
+      const photoData = extraPhotos[currentPhotoIndex];
+      
+      // Criação dinâmica do card Polaroid
+      const card = document.createElement('div');
+      card.className = 'interactive-polaroid-card absolute inset-0 bg-white p-3 pb-8 border border-[#1a1a1a]/15 shadow-lg hover:shadow-2xl transition-all duration-700 ease-out flex flex-col justify-between cursor-grab active:cursor-grabbing w-72 h-[340px] mx-auto';
+      card.style.zIndex = currentZIndex++;
+      
+      // Estado de animação de entrada inicial
+      card.style.opacity = '0';
+      card.style.transform = 'scale(1.4) translate(300px, -200px) rotate(45deg)';
+      
+      card.innerHTML = `
+        <div class="relative overflow-hidden aspect-square border border-txtCharcoal/10 bg-zinc-100 w-full">
+          <img src="${photoData.src}" alt="Foto da memória" class="w-full h-full object-cover select-none" draggable="false">
+          <div class="absolute inset-0 bg-amber-900/5 mix-blend-color-burn pointer-events-none"></div>
+        </div>
+        <div class="mt-4 text-center">
+          <p class="font-handwritten text-2xl text-txtCharcoal select-none leading-none rotate-1">
+            "${photoData.caption}"
+          </p>
+          <p class="text-[9px] font-mono text-txtCharcoal/55 tracking-wider uppercase mt-2 select-none">${photoData.date}</p>
+        </div>
+      `;
+
+      deckContainer.appendChild(card);
+      
+      // Toca um estalo analógico de vinil rápido como efeito sonoro de revelação
+      playClickSound();
+
+      // Força reflow para aplicar animação
+      card.offsetHeight;
+
+      // Animação para a posição central da pilha com rotação randômica
+      const randX = Math.floor(Math.random() * 24) - 12; // -12px a 12px
+      const randY = Math.floor(Math.random() * 24) - 12; // -12px a 12px
+      const randDeg = Math.floor(Math.random() * 16) - 8; // -8deg a 8deg
+      
+      card.style.opacity = '1';
+      card.style.transform = `translate(${randX}px, ${randY}px) rotate(${randDeg}deg)`;
+
+      // Dragging logic (afastar as fotos na pilha)
+      let isDragging = false;
+      let startX = 0, startY = 0;
+      let currentX = randX, currentY = randY;
+
+      card.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        startX = e.clientX - currentX;
+        startY = e.clientY - currentY;
+        card.style.transition = 'none';
+      });
+
+      window.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        currentX = e.clientX - startX;
+        currentY = e.clientY - startY;
+        card.style.transform = `translate(${currentX}px, ${currentY}px) rotate(${randDeg}deg)`;
+      });
+
+      window.addEventListener('mouseup', () => {
+        if (isDragging) {
+          isDragging = false;
+          card.style.transition = 'transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+          // Se arrastar muito longe, remove da pilha (efeito descartar)
+          if (Math.abs(currentX) > 160 || Math.abs(currentY) > 160) {
+            card.style.transform = `translate(${currentX * 1.5}px, ${currentY * 1.5}px) rotate(${randDeg * 2}deg)`;
+            card.style.opacity = '0';
+            setTimeout(() => card.remove(), 500);
+          } else {
+            // Volta para a pilha
+            card.style.transform = `translate(${randX}px, ${randY}px) rotate(${randDeg}deg)`;
+            currentX = randX;
+            currentY = randY;
+          }
+        }
+      });
+
+      // Suporte móvel (touch events)
+      card.addEventListener('touchstart', (e) => {
+        isDragging = true;
+        const touch = e.touches[0];
+        startX = touch.clientX - currentX;
+        startY = touch.clientY - currentY;
+        card.style.transition = 'none';
+      });
+
+      card.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+        const touch = e.touches[0];
+        currentX = touch.clientX - startX;
+        currentY = touch.clientY - startY;
+        card.style.transform = `translate(${currentX}px, ${currentY}px) rotate(${randDeg}deg)`;
+      });
+
+      card.addEventListener('touchend', () => {
+        if (isDragging) {
+          isDragging = false;
+          card.style.transition = 'transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+          if (Math.abs(currentX) > 120 || Math.abs(currentY) > 120) {
+            card.style.transform = `translate(${currentX * 1.5}px, ${currentY * 1.5}px) rotate(${randDeg * 2}deg)`;
+            card.style.opacity = '0';
+            setTimeout(() => card.remove(), 500);
+          } else {
+            card.style.transform = `translate(${randX}px, ${randY}px) rotate(${randDeg}deg)`;
+            currentX = randX;
+            currentY = randY;
+          }
+        }
+      });
+
+      currentPhotoIndex++;
+      if (currentPhotoIndex >= extraPhotos.length) {
+        btnReveal.innerText = 'Embaralhar & Recomeçar';
+      }
+    });
+
+    // Efeito sonoro de clique de obturador sintético
+    function playClickSound() {
+      if (!audioCtx) return;
+      try {
+        const osc = audioCtx.createOscillator();
+        const gainNode = audioCtx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(600, audioCtx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(100, audioCtx.currentTime + 0.15);
+        gainNode.gain.setValueAtTime(0.08, audioCtx.currentTime);
+        gainNode.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.15);
+        osc.connect(gainNode);
+        gainNode.connect(audioCtx.destination);
+        osc.start();
+        osc.stop(audioCtx.currentTime + 0.15);
+      } catch(e) {}
+    }
+  </script>
+</body>
+</html>
