@@ -339,171 +339,75 @@
     <!-- 3. SEÇÃO DE LINHA DO TEMPO (A Crônica: Nossos Marcos) -->
     <section class="py-16 border-b border-[#1a1a1a]/30" id="linha-do-tempo">
       <!-- Cabeçalho de Seção -->
-      <div class="text-center mb-16">
+      <div class="text-center mb-12">
         <div class="inline-block border-y border-txtCharcoal py-2 px-8">
           <h2 class="font-serif text-2xl md:text-4xl font-bold uppercase tracking-wider text-txtCharcoal">
             A Crônica: Nossos Marcos
           </h2>
         </div>
-        <p class="text-xs md:text-sm text-txtCharcoal/60 mt-3 uppercase tracking-widest">Linha do tempo oficial dos nossos momentos mais preciosos</p>
+        <p class="text-xs md:text-sm text-txtCharcoal/60 mt-3 uppercase tracking-widest">Nossa jornada de amor dividida em capítulos folheáveis</p>
       </div>
 
-      <!-- Container da Linha do Tempo -->
-      <div class="relative max-w-4xl mx-auto">
-        <!-- Linha Central (Desktop) -->
-        <div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-[#1a1a1a]/25 -translate-x-1/2"></div>
-
-        <!-- Capítulo 1: O Silêncio Inicial (Esquerda) -->
-        <div class="reveal-item flex flex-col md:flex-row items-start md:justify-between mb-12 relative w-full pl-10 md:pl-0">
-          <div class="absolute left-0 md:left-1/2 -translate-x-1/2 w-9 h-9 bg-bgWarm border-2 border-accentRed rounded-full flex items-center justify-center z-10 shadow-sm text-accentRed">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-            </svg>
+      <!-- Container do Livro de Memórias Interativo -->
+      <div class="max-w-4xl mx-auto bg-white border border-[#1a1a1a]/20 p-6 md:p-8 rounded shadow-md relative overflow-hidden">
+        
+        <!-- Navegação por Capítulos (Cabeçalho Retro) -->
+        <div class="border-b border-txtCharcoal/20 pb-4 mb-6 flex flex-col md:flex-row justify-between items-center gap-4">
+          <!-- Abas de Capítulos -->
+          <div class="flex flex-wrap justify-center gap-2" id="timeline-tabs">
+            <!-- Botões das abas serão gerados via JS -->
           </div>
-          <div class="w-full md:w-[45%] bg-white border border-[#1a1a1a]/20 p-5 rounded shadow-sm hover:shadow-md transition-shadow duration-300">
-            <span class="inline-block bg-accentRed text-white text-[10px] font-bold px-2 py-0.5 rounded-sm uppercase tracking-wider mb-2">
-              Novembro de 2025
-            </span>
-            <h4 class="font-serif text-lg font-bold text-txtCharcoal mb-2">Capítulo I: O Silêncio Inicial</h4>
-            <p class="text-xs md:text-sm text-txtCharcoal/85 leading-relaxed">
-              Dividíamos o mesmo espaço em Blumenau, mas quase não conversávamos. Havia uma curiosidade silenciosa no ar, que apenas aguardava o momento certo para se manifestar.
-            </p>
+          
+          <!-- Indicador Numérico de Progresso -->
+          <div class="font-mono text-xs text-txtCharcoal/60 uppercase tracking-widest" id="timeline-progress-indicator">
+            Capítulo 1 de 8
           </div>
-          <div class="hidden md:block w-[45%]"></div>
         </div>
 
-        <!-- Capítulo 2: A Viagem Reveladora (Direita) -->
-        <div class="reveal-item flex flex-col md:flex-row-reverse items-start md:justify-between mb-12 relative w-full pl-10 md:pl-0">
-          <div class="absolute left-0 md:left-1/2 -translate-x-1/2 w-9 h-9 bg-bgWarm border-2 border-accentRed rounded-full flex items-center justify-center z-10 shadow-sm text-accentRed">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-            </svg>
+        <!-- Conteúdo do Capítulo Ativo (Com transições suaves) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center min-h-[360px] transition-all duration-500 opacity-100 transform translate-x-0" id="timeline-chapter-card">
+          <!-- Coluna Esquerda: Texto do Capítulo (com drop-cap no JS) -->
+          <div class="flex flex-col justify-between h-full">
+            <div>
+              <span class="inline-block bg-accentRed text-white text-[10px] font-bold px-2 py-0.5 rounded-sm uppercase tracking-wider mb-3 shadow-sm" id="chapter-date">
+                Novembro de 2025
+              </span>
+              <h3 class="font-serif text-2xl font-black text-txtCharcoal mb-4" id="chapter-title">
+                Capítulo I: O Silêncio Inicial
+              </h3>
+              <p class="text-txtCharcoal/90 text-sm md:text-base leading-relaxed text-justify drop-cap" id="chapter-text">
+                Dividíamos o mesmo espaço em Blumenau, mas quase não conversávamos. Havia uma curiosidade silenciosa no ar, que apenas aguardava o momento certo para se manifestar.
+              </p>
+            </div>
+            
+            <!-- Botões de Navegação Inferiores -->
+            <div class="flex items-center gap-4 mt-8 pt-4 border-t border-txtCharcoal/10">
+              <button id="btn-chapter-prev" class="border border-txtCharcoal/30 px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-txtCharcoal/70 hover:bg-txtCharcoal hover:text-white transition-all duration-300 disabled:opacity-30 disabled:pointer-events-none rounded-sm">
+                ⬅ Anterior
+              </button>
+              <button id="btn-chapter-next" class="flex-1 bg-accentRed hover:bg-[#700000] text-white font-bold uppercase py-2 tracking-widest transition-all duration-300 transform active:scale-95 shadow border border-txtCharcoal text-xs rounded-sm">
+                Próximo Capítulo ➔
+              </button>
+            </div>
           </div>
-          <div class="w-full md:w-[45%] bg-white border border-[#1a1a1a]/20 p-5 rounded shadow-sm hover:shadow-md transition-shadow duration-300">
-            <span class="inline-block bg-accentRed text-white text-[10px] font-bold px-2 py-0.5 rounded-sm uppercase tracking-wider mb-2">
-              Florianópolis (Dia 1)
-            </span>
-            <h4 class="font-serif text-lg font-bold text-txtCharcoal mb-2">Capítulo II: A Estrada que Mudou Tudo</h4>
-            <p class="text-xs md:text-sm text-txtCharcoal/85 leading-relaxed">
-              A viagem reveladora. Na ida o silêncio persistia, mas em Florianópolis a amizade floresceu, o flerte começou e nosso primeiro beijo aconteceu. Rimos até hoje do "acidente" que nos impediu de fazer algo mais naquele dia.
-            </p>
-          </div>
-          <div class="hidden md:block w-[45%]"></div>
-        </div>
 
-        <!-- Capítulo 3: A Mensagem da Noite (Esquerda) -->
-        <div class="reveal-item flex flex-col md:flex-row items-start md:justify-between mb-12 relative w-full pl-10 md:pl-0">
-          <div class="absolute left-0 md:left-1/2 -translate-x-1/2 w-9 h-9 bg-bgWarm border-2 border-accentRed rounded-full flex items-center justify-center z-10 shadow-sm text-accentRed">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-            </svg>
+          <!-- Coluna Direita: Foto Polaroid correspondente ao Capítulo -->
+          <div class="flex justify-center items-center">
+            <div class="bg-white p-4 pb-8 border border-txtCharcoal/15 shadow-lg transform rotate-2 hover:rotate-0 hover:scale-[1.03] transition-all duration-500 w-full max-w-[280px] relative">
+              <!-- Foto com Washi-tape/Fita adesiva retrô decorativa no topo -->
+              <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-5 bg-amber-900/10 backdrop-blur-[1px] border-y border-dashed border-txtCharcoal/20 rotate-1 select-none pointer-events-none shadow-sm z-10"></div>
+              
+              <div class="relative overflow-hidden aspect-square border border-txtCharcoal/10 bg-zinc-100 w-full">
+                <img id="chapter-img" src="assets/IMG_2268.jpg" alt="Foto do Capítulo" class="w-full h-full object-cover select-none" draggable="false">
+                <div class="absolute inset-0 bg-amber-900/5 mix-blend-color-burn"></div>
+              </div>
+              <div class="mt-4 text-center">
+                <p class="font-handwritten text-xl text-txtCharcoal/90 select-none rotate-1 leading-none" id="chapter-img-caption">
+                  "O início de tudo..."
+                </p>
+              </div>
+            </div>
           </div>
-          <div class="w-full md:w-[45%] bg-white border border-[#1a1a1a]/20 p-5 rounded shadow-sm hover:shadow-md transition-shadow duration-300">
-            <span class="inline-block bg-accentRed text-white text-[10px] font-bold px-2 py-0.5 rounded-sm uppercase tracking-wider mb-2">
-              Florianópolis (Dia 2)
-            </span>
-            <h4 class="font-serif text-lg font-bold text-txtCharcoal mb-2">Capítulo III: O Encontro de Verdade</h4>
-            <p class="text-xs md:text-sm text-txtCharcoal/85 leading-relaxed">
-              Você saiu com seus amigos e me enviou uma mensagem à noite. Acordei por acaso, vi e nos encontramos. Foi ali que a nossa conexão se estabeleceu de forma definitiva e "ficamos" para valer.
-            </p>
-          </div>
-          <div class="hidden md:block w-[45%]"></div>
-        </div>
-
-        <!-- Capítulo 4: Inseparáveis (Direita) -->
-        <div class="reveal-item flex flex-col md:flex-row-reverse items-start md:justify-between mb-12 relative w-full pl-10 md:pl-0">
-          <div class="absolute left-0 md:left-1/2 -translate-x-1/2 w-9 h-9 bg-bgWarm border-2 border-accentRed rounded-full flex items-center justify-center z-10 shadow-sm text-accentRed">
-            <svg class="w-4 h-4 fill-accentRed" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-            </svg>
-          </div>
-          <div class="w-full md:w-[45%] bg-white border border-[#1a1a1a]/20 p-5 rounded shadow-sm hover:shadow-md transition-shadow duration-300">
-            <span class="inline-block bg-accentRed text-white text-[10px] font-bold px-2 py-0.5 rounded-sm uppercase tracking-wider mb-2">
-              Janeiro de 2026
-            </span>
-            <h4 class="font-serif text-lg font-bold text-txtCharcoal mb-2">Capítulo IV: A Invasão do Cotidiano</h4>
-            <p class="text-xs md:text-sm text-txtCharcoal/85 leading-relaxed">
-              De volta a Blumenau, passamos a nos ver diariamente. Logo vieram os finais de semana juntos, jantares românticos, viagens e a forma incrivelmente especial como você conquistou minha família e meu pai.
-            </p>
-          </div>
-          <div class="hidden md:block w-[45%]"></div>
-        </div>
-
-        <!-- Capítulo 5: Lares & Pais (Esquerda) -->
-        <div class="reveal-item flex flex-col md:flex-row items-start md:justify-between mb-12 relative w-full pl-10 md:pl-0">
-          <div class="absolute left-0 md:left-1/2 -translate-x-1/2 w-9 h-9 bg-bgWarm border-2 border-accentRed rounded-full flex items-center justify-center z-10 shadow-sm text-accentRed">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-            </svg>
-          </div>
-          <div class="w-full md:w-[45%] bg-white border border-[#1a1a1a]/20 p-5 rounded shadow-sm hover:shadow-md transition-shadow duration-300">
-            <span class="inline-block bg-accentRed text-white text-[10px] font-bold px-2 py-0.5 rounded-sm uppercase tracking-wider mb-2">
-              Fevereiro de 2026
-            </span>
-            <h4 class="font-serif text-lg font-bold text-txtCharcoal mb-2">Capítulo V: Lares & Pais</h4>
-            <p class="text-xs md:text-sm text-txtCharcoal/85 leading-relaxed">
-              Você começou a frequentar meus finais de semana, almoços e a conhecer minha família. Ver a conexão linda e o carinho sincero que nasceu entre você e meu pai se tornou uma das minhas maiores alegrias.
-            </p>
-          </div>
-          <div class="hidden md:block w-[45%]"></div>
-        </div>
-
-        <!-- Capítulo 6: Declarações (Direita) -->
-        <div class="reveal-item flex flex-col md:flex-row-reverse items-start md:justify-between mb-12 relative w-full pl-10 md:pl-0">
-          <div class="absolute left-0 md:left-1/2 -translate-x-1/2 w-9 h-9 bg-bgWarm border-2 border-accentRed rounded-full flex items-center justify-center z-10 shadow-sm text-accentRed">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.907c.961 0 1.36 1.242.588 1.81l-3.97 2.883a1 1 0 00-.364 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.971-2.883a1 1 0 00-1.175 0l-3.97 2.883c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h4.906a1 1 0 00.951-.69l1.519-4.674z" />
-            </svg>
-          </div>
-          <div class="w-full md:w-[45%] bg-white border border-[#1a1a1a]/20 p-5 rounded shadow-sm hover:shadow-md transition-shadow duration-300">
-            <span class="inline-block bg-accentRed text-white text-[10px] font-bold px-2 py-0.5 rounded-sm uppercase tracking-wider mb-2">
-              Março de 2026
-            </span>
-            <h4 class="font-serif text-lg font-bold text-txtCharcoal mb-2">Capítulo VI: Os "Eu te amo" Inesperados</h4>
-            <p class="text-xs md:text-sm text-txtCharcoal/85 leading-relaxed">
-              A descoberta mútua da paixão. Os sentimentos transbordaram de forma espontânea, com declarações e surpresas sussurradas nos momentos mais descontraídos e inesperados da nossa rotina.
-            </p>
-          </div>
-          <div class="hidden md:block w-[45%]"></div>
-        </div>
-
-        <!-- Capítulo 7: O Pedido (Esquerda) -->
-        <div class="reveal-item flex flex-col md:flex-row items-start md:justify-between mb-12 relative w-full pl-10 md:pl-0">
-          <div class="absolute left-0 md:left-1/2 -translate-x-1/2 w-9 h-9 bg-bgWarm border-2 border-accentRed rounded-full flex items-center justify-center z-10 shadow-sm text-accentRed">
-            <svg class="w-4 h-4 fill-accentRed" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-            </svg>
-          </div>
-          <div class="w-full md:w-[45%] bg-white border border-[#1a1a1a]/20 p-5 rounded shadow-sm hover:shadow-md transition-shadow duration-300">
-            <span class="inline-block bg-accentRed text-white text-[10px] font-bold px-2 py-0.5 rounded-sm uppercase tracking-wider mb-2">
-              Março de 2026 (3 Meses)
-            </span>
-            <h4 class="font-serif text-lg font-bold text-txtCharcoal mb-2">Capítulo VII: O Pedido de Namoro</h4>
-            <p class="text-xs md:text-sm text-txtCharcoal/85 leading-relaxed">
-              O selo oficial da nossa história. Com três meses de cumplicidade diária, decidimos formalizar nosso caminhar lado a lado, dando início a uma parceria que hoje me faz o homem mais feliz do mundo.
-            </p>
-          </div>
-          <div class="hidden md:block w-[45%]"></div>
-        </div>
-
-        <!-- Capítulo 8: Meio Ano Juntos (Direita) -->
-        <div class="reveal-item flex flex-col md:flex-row-reverse items-start md:justify-between mb-4 relative w-full pl-10 md:pl-0">
-          <div class="absolute left-0 md:left-1/2 -translate-x-1/2 w-9 h-9 bg-bgWarm border-2 border-accentRed rounded-full flex items-center justify-center z-10 shadow-sm text-accentRed">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-            </svg>
-          </div>
-          <div class="w-full md:w-[45%] bg-white border border-[#1a1a1a]/20 p-5 rounded shadow-sm hover:shadow-md transition-shadow duration-300">
-            <span class="inline-block bg-accentRed text-white text-[10px] font-bold px-2 py-0.5 rounded-sm uppercase tracking-wider mb-2">
-              Junho de 2026 (6 Meses)
-            </span>
-            <h4 class="font-serif text-lg font-bold text-txtCharcoal mb-2">Capítulo VIII: Meio Ano de Amor</h4>
-            <p class="text-xs md:text-sm text-txtCharcoal/85 leading-relaxed">
-              Nosso primeiro Dia dos Namorados juntos. São 6 meses compartilhando sorrisos, viagens, opostos perfeitos e a certeza absoluta de que quero compartilhar o resto da minha vida ao seu lado.
-            </p>
-          </div>
-          <div class="hidden md:block w-[45%]"></div>
         </div>
 
       </div>
@@ -1217,6 +1121,165 @@
         musicAudio.currentTime = clickedPercentage * musicAudio.duration;
       }
     });
+
+    // -------------------------------------------------------------
+    // 4. LINHA DO TEMPO INTERATIVA (Nossos Marcos passo a passo)
+    // -------------------------------------------------------------
+    const timelineChapters = [
+      {
+        title: "Capítulo I: O Silêncio Inicial",
+        date: "Novembro de 2025",
+        text: "Dividíamos o mesmo espaço em Blumenau, mas quase não conversávamos. Havia uma curiosidade silenciosa no ar, que apenas aguardava o momento certo para se manifestar.",
+        src: "assets/IMG_2268.jpg",
+        caption: "Nossos olhares tímidos no início..."
+      },
+      {
+        title: "Capítulo II: A Estrada que Mudou Tudo",
+        date: "Florianópolis (Dia 1)",
+        text: "A viagem reveladora. Na ida o silêncio persistia, mas em Florianópolis a amizade floresceu, o flerte começou e nosso primeiro beijo aconteceu. Rimos até hoje do \"acidente\" que nos impediu de fazer algo mais naquele dia.",
+        src: "assets/IMG_2382.jpg",
+        caption: "A viagem que uniu nossas estradas..."
+      },
+      {
+        title: "Capítulo III: O Encontro de Verdade",
+        date: "Florianópolis (Dia 2)",
+        text: "Você saiu com seus amigos e me enviou uma mensagem à noite. Acordei por acaso, vi e nos encontramos. Foi ali que a nossa conexão se estabeleceu de forma definitiva e \"ficamos\" para valer.",
+        src: "assets/IMG_2384.jpg",
+        caption: "Aquele encontro especial em Floripa..."
+      },
+      {
+        title: "Capítulo IV: A Invasão do Cotidiano",
+        date: "Janeiro de 2026",
+        text: "De volta a Blumenau, passamos a nos ver diariamente. Logo vieram os finais de semana juntos, jantares românticos, viagens e a forma incrivelmente especial como você conquistou minha família e meu pai.",
+        src: "assets/IMG_2725.jpg",
+        caption: "Construindo nossa rotina diária em Blumenau..."
+      },
+      {
+        title: "Capítulo V: Lares & Pais",
+        date: "Fevereiro de 2026",
+        text: "Você começou a frequentar meus finais de semana, almoços e a conhecer minha família. Ver a conexão linda e o carinho sincero que nasceu entre você e meu pai se tornou uma das minhas maiores alegrias.",
+        src: "assets/IMG_2826.jpg",
+        caption: "A alegria de ver você com minha família..."
+      },
+      {
+        title: "Capítulo VI: Os \"Eu te amo\" Inesperados",
+        date: "Março de 2026",
+        text: "A descoberta mútua da paixão. Os sentimentos transbordaram de forma espontânea, com declarações e surpresas sussurradas nos momentos mais descontraídos e inesperados da nossa rotina.",
+        src: "assets/IMG_2882.jpg",
+        caption: "Os sorrisos mais sinceros ao seu lado..."
+      },
+      {
+        title: "Capítulo VII: O Pedido de Namoro",
+        date: "Março de 2026 (3 Meses)",
+        text: "O selo oficial da nossa história. Com três meses de cumplicidade diária, decidimos formalizar nosso caminhar lado a lado, dando início a uma parceria que hoje me faz o homem mais feliz do mundo.",
+        src: "assets/IMG_3184.jpg",
+        caption: "O início do nosso pra sempre oficial..."
+      },
+      {
+        title: "Capítulo VIII: Meio Ano de Amor",
+        date: "Junho de 2026 (6 Meses)",
+        text: "Nosso primeiro Dia dos Namorados juntos. São 6 meses compartilhando sorrisos, viagens, opostos perfeitos e a certeza absoluta de que quero compartilhar o resto da minha vida ao seu lado.",
+        src: "assets/IMG_3218.jpg",
+        caption: "Meio ano de puro amor e felicidade..."
+      }
+    ];
+
+    let activeChapterIndex = 0;
+
+    const timelineTabsContainer = document.getElementById('timeline-tabs');
+    const timelineIndicator = document.getElementById('timeline-progress-indicator');
+    const chapterCard = document.getElementById('timeline-chapter-card');
+    const chapterDate = document.getElementById('chapter-date');
+    const chapterTitle = document.getElementById('chapter-title');
+    const chapterText = document.getElementById('chapter-text');
+    const chapterImg = document.getElementById('chapter-img');
+    const chapterImgCaption = document.getElementById('chapter-img-caption');
+    const btnChapterPrev = document.getElementById('btn-chapter-prev');
+    const btnChapterNext = document.getElementById('btn-chapter-next');
+
+    // Inicializa a navegação superior por abas
+    function initTimelineTabs() {
+      timelineTabsContainer.innerHTML = '';
+      timelineChapters.forEach((chap, idx) => {
+        const romanNumerals = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII"];
+        const tab = document.createElement('button');
+        tab.className = `px-3 py-1 text-xs font-serif font-bold border border-txtCharcoal/20 transition-all duration-300 rounded-sm ${idx === activeChapterIndex ? 'bg-accentRed text-white border-accentRed' : 'bg-white text-txtCharcoal/70 hover:bg-zinc-50'}`;
+        tab.innerText = romanNumerals[idx];
+        tab.title = chap.title;
+        
+        tab.addEventListener('click', () => {
+          if (idx !== activeChapterIndex) {
+            goToChapter(idx);
+          }
+        });
+        timelineTabsContainer.appendChild(tab);
+      });
+    }
+
+    // Navega para um capítulo específico
+    function goToChapter(index) {
+      if (index < 0 || index >= timelineChapters.length) return;
+
+      // Animação de transição suave (fade out)
+      chapterCard.classList.remove('opacity-100', 'translate-x-0');
+      chapterCard.classList.add('opacity-0', index > activeChapterIndex ? '-translate-x-4' : 'translate-x-4');
+
+      setTimeout(() => {
+        activeChapterIndex = index;
+        const chap = timelineChapters[index];
+
+        // Atualiza elementos
+        chapterDate.innerText = chap.date;
+        chapterTitle.innerText = chap.title;
+        chapterText.innerText = chap.text;
+        chapterImg.src = chap.src;
+        chapterImgCaption.innerText = chap.caption;
+
+        // Atualiza botões
+        btnChapterPrev.disabled = index === 0;
+        
+        if (index === timelineChapters.length - 1) {
+          btnChapterNext.innerText = 'Recomeçar Jornada ↺';
+        } else {
+          btnChapterNext.innerText = 'Próximo Capítulo ➔';
+        }
+
+        // Atualiza abas ativas
+        Array.from(timelineTabsContainer.children).forEach((tab, tabIdx) => {
+          if (tabIdx === index) {
+            tab.className = 'px-3 py-1 text-xs font-serif font-bold border border-accentRed bg-accentRed text-white transition-all duration-300 rounded-sm';
+          } else {
+            tab.className = 'px-3 py-1 text-xs font-serif font-bold border border-txtCharcoal/20 bg-white text-txtCharcoal/70 hover:bg-zinc-50 transition-all duration-300 rounded-sm';
+          }
+        });
+
+        // Atualiza indicador
+        timelineIndicator.innerText = `Capítulo ${index + 1} de ${timelineChapters.length}`;
+
+        // Animação de transição suave (fade in)
+        chapterCard.classList.remove('opacity-0', '-translate-x-4', 'translate-x-4');
+        chapterCard.classList.add('opacity-100', 'translate-x-0');
+      }, 300);
+    }
+
+    // Listeners dos botões de navegação
+    btnChapterPrev.addEventListener('click', () => {
+      if (activeChapterIndex > 0) {
+        goToChapter(activeChapterIndex - 1);
+      }
+    });
+
+    btnChapterNext.addEventListener('click', () => {
+      if (activeChapterIndex < timelineChapters.length - 1) {
+        goToChapter(activeChapterIndex + 1);
+      } else {
+        goToChapter(0); // Recomeça se chegar ao fim
+      }
+    });
+
+    // Inicialização da linha do tempo
+    initTimelineTabs();
+    goToChapter(0);
 
     // -------------------------------------------------------------
     // 5. ÁLBUM DE MEMÓRIAS INTERATIVO (PÁGINA 2 — Mesa de Revelação)
