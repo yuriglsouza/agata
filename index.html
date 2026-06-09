@@ -1209,6 +1209,13 @@
         text: "Ver você dormindo calmamente ao meu lado me dá a certeza do amor. A cumplicidade diária e o carinho mútuo pavimentaram o caminho de uma história inestimável.",
         src: "assets/ela_dormindo_sofa_heic.jpg", // <--- FOTO DO CAPÍTULO 8
         caption: "Ela dormindo no sofá, puro carinho e rotina."
+      },
+      {
+        title: "Capítulo IX: Você é a Minha Vida",
+        date: "Recentemente",
+        text: "Uma lembrança recente, mas que resume tudo. Hoje, você já é a minha vida inteira. Você participa de cada pequeno detalhe do meu dia a dia, é a minha família e quem eu prometo proteger, guiar e amar com todas as minhas forças para sempre.",
+        src: "assets/1a7ff470_951e_4e9f_bd61_1aad430fb34f_4_5005_c.jpg", // <--- FOTO DO CAPÍTULO 9
+        caption: "Você é a minha família e o meu amor eterno."
       }
     ];
 
@@ -1229,7 +1236,7 @@
     function initTimelineTabs() {
       timelineTabsContainer.innerHTML = '';
       timelineChapters.forEach((chap, idx) => {
-        const romanNumerals = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII"];
+        const romanNumerals = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"];
         const tab = document.createElement('button');
         tab.className = `px-3 py-1 text-xs font-serif font-bold border border-txtCharcoal/20 transition-all duration-300 rounded-sm ${idx === activeChapterIndex ? 'bg-accentRed text-white border-accentRed' : 'bg-white text-txtCharcoal/70 hover:bg-zinc-50'}`;
         tab.innerText = romanNumerals[idx];
